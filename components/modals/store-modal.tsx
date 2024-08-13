@@ -50,6 +50,8 @@ const StoreModal = () => {
 
       toast.success("Store created successfully");
 
+      window.location.assign(`/${response.data.id}`);
+
       console.log(response.data);
     } catch (error) {
       toast.error("Failed to create store");
