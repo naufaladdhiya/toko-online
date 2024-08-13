@@ -3,15 +3,15 @@
 import { useEffect } from "react";
 import { UserButton } from "@clerk/nextjs";
 
-import { UseStoreModal } from "@/hooks/use-store-modal";
+import { useStoreModal } from "@/hooks/use-store-modal";
 
 const SetupPage = () => {
-  const onOpen = UseStoreModal((state) => state.onOpen);
-  const isOpen = UseStoreModal((state) => state.isOpen);
+  const onOpen = useStoreModal((state) => state.onOpen);
+  const isOpen = useStoreModal((state) => state.isOpen);
 
   useEffect(() => {
     if (!isOpen) onOpen();
-  }, [onOpen, isOpen]);
+  }, [isOpen, onOpen]);
 
   return (
     <main className="p-6">
